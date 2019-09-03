@@ -1,0 +1,581 @@
+/* Desktop Layout */
+
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.navbar-right {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.navbar-right li {
+  border-right: 0 none;
+  margin-top: 5px;
+  padding: 0;
+}
+.navbar-right li a {
+  font-size: 17px;
+}
+.navbar-brand > img {
+  margin-top: 20px;
+  width: 80%;
+}
+.mexico-home-header {
+	background-size: cover;
+	height: auto;
+	padding-bottom: 60px;
+}
+.mexico-search-wrap {
+	background: #fff;
+	border: 5px solid #f4f4f4;
+	border-bottom: 0px solid;
+	box-shadow: 0px 5px 5px #f4f4f4;
+	margin-top: 32px;
+	padding-top: 12px;
+}
+.mexico-search-wrap button {
+	background: #fb236a;
+	border: none;
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
+	padding: 13px 105px;
+	border-radius: 8px;
+	width: 100%;
+}
+.mexico-sale-img{
+	margin-bottom:23px;
+}
+.mexico-sale-img img {
+	position: relative;
+	width: 100%;
+}
+.mexico-sale-text3 h3 img {
+	margin-right: 12px;
+	width: 30px;
+}
+.mexico-sale-btn button#btn2 img {
+	margin-right: 12px;
+	width: 20px;
+}
+.mexico-listing-content2 {
+	display: block;
+	text-align: left;
+	padding-top: 24px;
+}
+.mexico-listing-content button {
+	background: #fff;
+	border: none;
+	border: 2px solid #eee;
+	border-radius: 20px;
+	color: #1b2032;
+	font-family: 'Nunito', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 6px 17px;
+	margin-top: 20px;
+}
+.mexico-home-header2 {
+	background-size: cover;
+	height: auto;
+	padding-bottom:80px;
+}
+.mexico-home-header3 {
+	background-size: cover;
+	height: auto;
+	padding-bottom:80px;
+}
+.mexico-contact-wrap {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 12px 20px;
+	padding-top: 5px;
+	margin-top: 35px;
+}
+.mexico-contact1 {
+	background: #5ebe7d;
+	border-radius: 7px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	padding-left: 35px;
+	position: relative;
+	margin-top: 40px;
+}
+.mexico-register-wrap .new-alert {
+	background: #079855;
+	border-radius: 0px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 10px 26px;
+	margin-top:30px;
+}
+.mexico-register-wrap .new-alert2 {
+	background: #993a76;
+	border-radius: 0px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 10px 45px;
+	margin-top: 40px;
+}
+
+.mexico-license{
+	margin-bottom:50px;
+}
+.mexico-upload2-wrap {
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 40px;
+}
+.mexico-license5{
+	padding-left:0px;
+	padding-top:22px;
+}
+.mexico-internal-text2{
+	margin-top:35px;
+}
+.mexico-internal-text3 {
+	background: #fff;
+	border: 2px solid #eee;
+	padding-left: 23px;
+	margin-top: 30px;
+}
+}
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+.navbar-toggle {
+  background-color: black;
+}
+.navbar-toggle .icon-bar {
+  background: #fff;
+}
+.navbar-brand > img {
+  margin-top: 10px;
+  margin-left:0px;
+  width: 100%;
+}
+.navbar {
+  background-color: none;
+  border: medium none;
+  border-radius: 0;
+  padding-bottom: 35px;
+  padding-top: 10px;
+}
+.navbar-right{
+	padding-top:20px;
+}
+.navbar-right li {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-right: 0 none;
+}
+.mexico-home-header {
+	background-size: cover;
+	height: auto;
+	padding-bottom: 60px;
+}
+.mexico-search-wrap {
+	background: #fff;
+	border: 5px solid #f4f4f4;
+	border-bottom: 0px solid;
+	box-shadow: 0px 5px 5px #f4f4f4;
+	margin-top: 32px;
+	padding-top: 12px;
+}
+.mexico-search-wrap button {
+	background: #fb236a;
+	border: none;
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
+	padding: 13px 105px;
+	border-radius: 8px;
+	width: 100%;
+}
+.mexico-sale-img{
+	margin-bottom:23px;
+}
+.mexico-sale-img img {
+	position: relative;
+	width: 100%;
+}
+.mexico-sale-text3 h3 img {
+	margin-right: 12px;
+	width: 30px;
+}
+.mexico-sale-btn button#btn2 img {
+	margin-right: 12px;
+	width: 20px;
+}
+.mexico-nav-extra a.one {
+	background: #fb236a;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 8px 30px;
+	border-radius: 23px;
+	display: block;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.mexico-social ul li {
+	list-style: none;
+	display: inline-block;
+	padding-left: 0px;
+	padding-right: 4px;
+}
+.mexico-listing-content2 {
+	display: block;
+	text-align: left;
+	padding-top: 24px;
+}
+.mexico-listing-content button {
+	background: #fff;
+	border: none;
+	border: 2px solid #eee;
+	border-radius: 20px;
+	color: #1b2032;
+	font-family: 'Nunito', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 6px 17px;
+	margin-top: 20px;
+}
+.mexico-listing-content2 button#btn2 {
+	background: #8c689d;
+	border: 0px solid;
+	border-radius: 4px;
+	color: #ffffff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 9px 16px;
+	margin-left: 1px;
+}
+.mexico-listing-content2 button#btn3 {
+	background: #fb236a;
+	border: 0px solid;
+	border-radius: 4px;
+	color: #ffffff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 9px 16px;
+	margin-left: 1px;
+}
+.mexico-contact-wrap {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 12px 20px;
+	padding-top: 5px;
+	margin-top: 35px;
+}
+.mexico-home-header2 {
+	background-size: cover;
+	height: auto;
+	padding-bottom:80px;
+}
+.mexico-home-header3 {
+	background-size: cover;
+	height: auto;
+	padding-bottom:80px;
+}
+.mexico-contact-wrap {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 12px 20px;
+	padding-top: 5px;
+	margin-top: 35px;
+}
+.mexico-contact1 {
+	background: #5ebe7d;
+	border-radius: 7px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	padding-left: 35px;
+	position: relative;
+	margin-top: 40px;
+}
+.mexico-register-wrap .new-alert {
+	background: #079855;
+	border-radius: 0px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 21px;
+	font-weight: 600;
+	padding: 10px 21px;
+	margin-top: 30px;
+}
+.mexico-register-wrap .new-alert2 {
+	background: #993a76;
+	border-radius: 0px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 10px 10px;
+	margin-top: 40px;
+}
+
+
+.mexico-license{
+	margin-bottom:50px;
+}
+.mexico-upload2-wrap {
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 40px;
+}
+.mexico-license5{
+	padding-left:0px;
+	padding-top:22px;
+}
+.mexico-internal-text2{
+	margin-top:35px;
+}
+.mexico-internal-text3 {
+	background: #fff;
+	border: 2px solid #eee;
+	padding-left: 23px;
+	margin-top: 30px;
+}
+.mexico-internal-heading2 button {
+	background: #f52368;
+	border: 0px solid;
+	border-radius: 20px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 34px;
+	font-weight: 700;
+	padding: 1px 30px;
+	margin-left: 20px;
+}
+.mexico-logged {
+	background: #fff;
+	border-radius: 12px;
+	padding: 25px 10px;
+	display: block;
+	text-align: center;
+}
+.mexico-logged button {
+	background: #fb236a;
+	border: 0px solid;
+	border-radius: 4px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 21px;
+	font-weight: 700;
+	padding: 12px 60px;
+	margin-bottom: 40px;
+}
+.mexico-internal1 img {
+	position: relative;
+	top: 20px;
+	right: 6px;
+}
+.mexico-contact1 img {
+	position: relative;
+	top: 20px;
+	right: 6px;
+}
+}
+
+/* Wide Mobile Layout: */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.navbar-toggle {
+  background-color: black;
+}
+.navbar-toggle .icon-bar {
+  background: #fff;
+}
+.navbar-brand > img {
+  margin-top: 10px;
+  width: 100%;
+}
+.navbar {
+  background-color: none;
+  border: medium none;
+  border-radius: 0;
+  padding-bottom: 35px;
+  padding-top: 10px;
+}
+.navbar-right{
+	padding-top:20px;
+}
+.navbar-right li {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-right: 0 none;
+}
+.mexico-home-header {
+	background-size: cover;
+	height: auto;
+	padding-bottom: 60px;
+}
+.mexico-search-wrap {
+	background: #fff;
+	border: 5px solid #f4f4f4;
+	border-bottom: 0px solid;
+	box-shadow: 0px 5px 5px #f4f4f4;
+	margin-top: 32px;
+	padding-top: 12px;
+}
+.mexico-search-wrap button {
+	background: #fb236a;
+	border: none;
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
+	padding: 13px 105px;
+	border-radius: 8px;
+	width: 100%;
+}
+.mexico-sale-img{
+	margin-bottom:23px;
+}
+.mexico-sale-img img {
+	position: relative;
+	width: 100%;
+}
+.mexico-sale-text3 h3 img {
+	margin-right: 12px;
+	width: 30px;
+}
+.mexico-sale-btn button#btn2 img {
+	margin-right: 12px;
+	width: 20px;
+}
+.mexico-nav-extra a.one {
+	background: #fb236a;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 8px 30px;
+	border-radius: 23px;
+	display: inline-block;
+	margin-bottom:0px;
+	text-align: left;
+}
+.mexico-listing-content2 {
+	display: block;
+	text-align: left;
+	padding-top: 24px;
+}
+.mexico-listing-content button {
+	background: #fff;
+	border: none;
+	border: 2px solid #eee;
+	border-radius: 20px;
+	color: #1b2032;
+	font-family: 'Nunito', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 6px 17px;
+	margin-top: 20px;
+}
+.mexico-home-header2 {
+	background-size: cover;
+	height: auto;
+	padding-bottom:80px;
+}
+.mexico-home-header3 {
+	background-size: cover;
+	height: auto;
+	padding-bottom:80px;
+}
+.mexico-contact-wrap {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 12px 20px;
+	padding-top: 5px;
+	margin-top: 35px;
+}
+.mexico-contact1 {
+	background: #5ebe7d;
+	border-radius: 7px;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	padding-left: 35px;
+	position: relative;
+	margin-top: 40px;
+}
+.mexico-register-wrap .new-alert {
+	background: #079855;
+	border-radius: 0px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 21px;
+	font-weight: 600;
+	padding: 10px 21px;
+	margin-top: 30px;
+}
+.mexico-register-wrap .new-alert2 {
+	background: #993a76;
+	border-radius: 0px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 10px 45px;
+	margin-top: 40px;
+}
+.mexico-license{
+	margin-bottom:50px;
+}
+.mexico-upload2-wrap {
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 40px;
+}
+.mexico-license5{
+	padding-left:0px;
+	padding-top:22px;
+}
+.mexico-internal-text2{
+	margin-top:35px;
+}
+.mexico-internal-text3 {
+	background: #fff;
+	border: 2px solid #eee;
+	padding-left: 23px;
+	margin-top: 30px;
+}
+.mexico-internal-heading2 button {
+	background: #f52368;
+	border: 0px solid;
+	border-radius: 20px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-size: 34px;
+	font-weight: 700;
+	padding: 1px 30px;
+	margin-left: 20px;
+}
+.mexico-logged {
+	background: #fff;
+	border-radius: 12px;
+	padding: 25px 10px;
+	display: block;
+	text-align: center;
+}
+.mexico-internal1 img {
+	position:absolute;
+	top: 20px;
+	right: 6px;
+}
+.mexico-contact1 img {
+	position: absolute;
+	top: 20px;
+	right: 6px;
+}
+}
