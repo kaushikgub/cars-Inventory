@@ -1,5 +1,4 @@
 .navbar {
-	background-color:none;
     border: medium none;
     border-radius: 0;
     padding-top:0px;
@@ -22,7 +21,6 @@
     padding-bottom: 0px;
 }
 .navbar .navbar-right li a:hover {
-    color: none;
     background: none;
 }
 .navbar .navbar-right li a.active{
@@ -94,41 +92,41 @@ a:focus{
 	margin-top:-40px;
 	padding-top:12px;
 }
-/* body select.select_box */ 
-.mexico-search-wrap select { 
+/* body select.select_box */
+.mexico-search-wrap select {
     display: block;
     padding: 13px;
     margin-bottom:20px;
-    width: 100%; 
-    height: auto !important; 
+    width: 100%;
+    height: auto !important;
     border:none;
 	border-right:1px solid #ddd;
-    border-radius: 3px; 
+    border-radius: 3px;
 	background:url(../images/mexico-icon4.png) right center no-repeat;
     background-position: right 30px center;
-    background-color: #fff; 
-    color: #5c6770; 
+    background-color: #fff;
+    color: #5c6770;
     font-family: 'Nunito', sans-serif;
     font-size: 15px;
     font-weight: 400;
-    line-height: 16px !important; 
-    appearance: none; 
-    /* this is must */ -webkit-appearance: none; 
-    -moz-appearance: none; 
-} 
-/* body select.select_box option */ 
+    line-height: 16px !important;
+    appearance: none;
+    /* this is must */ -webkit-appearance: none;
+    -moz-appearance: none;
+}
+/* body select.select_box option */
 .mexico-search-wrap select option {
 	background:#ebebeb;
 	color:#2a2a2a;
 	border:0 !important;
     padding: 0 4px;
-} 
-/* for IE and Edge */ 
-.mexico-search-wrap select::-ms-expand { 
-    display: none; 
-} 
-.mexico-search-wrap select:disabled::-ms-expand { 
-    background: #f60; 
+}
+/* for IE and Edge */
+.mexico-search-wrap select::-ms-expand {
+    display: none;
+}
+.mexico-search-wrap select:disabled::-ms-expand {
+    background: #f60;
 }
 .mexico-search-wrap button{
 	background:#fb236a;
@@ -250,7 +248,7 @@ a:focus{
 .mexico-sale-btn button{
 	background:#fb236a;
 	border:0px solid;
-    color: #fff; 
+    color: #fff;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     font-weight: 900;
@@ -260,7 +258,7 @@ a:focus{
 .mexico-sale-btn button#btn{
 	background:#fff;
 	border:0px solid;
-    color: #1b2032; 
+    color: #1b2032;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -271,7 +269,7 @@ a:focus{
 .mexico-sale-btn button#btn2{
 	background:none;
 	border:0px solid;
-    color: #fff; 
+    color: #fff;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -292,7 +290,7 @@ a:focus{
 	padding-left:29px;
 }
 .mexico-sale-text ul li{
-    color: #fff; 
+    color: #fff;
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -314,7 +312,7 @@ a:focus{
 	position:relative;
 }
 .mexico-sale-text2 h2{
-    color: #1b2032; 
+    color: #1b2032;
     font-family: 'Nunito', sans-serif;
     font-size: 24px;
     font-weight:600;
@@ -330,7 +328,7 @@ a:focus{
     border-bottom-right-radius:8px;
 }
 .mexico-sale-text3 h3{
-    color: #4cbfd8; 
+    color: #4cbfd8;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     font-weight:400;
@@ -643,7 +641,7 @@ a:focus{
 }
 .mexico-contact-text ul.one li{
 	list-style:none;
-} 
+}
 .mexico-contact-text ul.one li {
 	color: #5c6770;
 	font-family: 'Nunito', sans-serif;
@@ -662,12 +660,12 @@ a:focus{
 	list-style:none;
 	display:inline-block;
 	padding-right:12px;
-} 
+}
 .mexico-contact-text ul li a{
 	background:#fff;
 	color:#9fa9b8;
 	border:2px solid #efefef;
-	height36px;
+	height:36px;
 	width:36px;
 	border-radius:36px;
 	line-height:34px;

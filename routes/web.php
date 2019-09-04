@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get('admin-panel', 'AdminController@loadAdminLoginIndex');
+Route::get('admin-panel/car-list', 'AdminController@loadListingIndex')->middleware('admin');
+Route::get('admin-panel/car-upload', 'AdminController@loadCarUploadIndex')->middleware('admin');
+
+
+Route::get('login/', 'LoginController@loadLoginIndex');
+Route::get('register/', 'LoginController@loadRegisterIndex');
+Route::get('contact/', 'ContactController@loadContactIndex');
