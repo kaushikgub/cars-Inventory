@@ -24,3 +24,4 @@ Route::get('admin-panel/car-upload', 'AdminController@loadCarUploadIndex')->midd
 Route::get('login/', 'LoginController@loadLoginIndex');
 Route::get('register/', 'LoginController@loadRegisterIndex');
 Route::get('contact/', 'ContactController@loadContactIndex');
+Route::post('contact/user-massage/', 'ContactController@contactUserMassage');

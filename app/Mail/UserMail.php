@@ -16,9 +16,17 @@ class UserMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $name;
+    public $email;
+    public $subject;
+    public $massage;
+
+    public function __construct($name, $email, $subject, $massage)
     {
-        //
+        $this->name = $name;
+        $this->email = $email;
+        $this->subject = $subject;
+        $this->massage = $massage;
     }
 
     /**
@@ -28,6 +36,10 @@ class UserMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        $name = $this->name;
+        $subject = $this->subject;
+        $email = $this->email;
+        $massage = $this->massage;
+        return $this->view('user-contact-mail-body', compact('name', 'email', 'massage'))->subject($subject);
     }
 }
