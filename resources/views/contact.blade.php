@@ -73,7 +73,7 @@
                 <div class="mexico-contact-wrap">
                     <h3><img src="{{ asset('images/mexico-icon10.png') }}" alt="icon10"> Contact Use</h3>
                     <hr>
-                    <form method="post" action="{{ url('contact/user-massage') }}">
+                    <form method="post" action="{{ url('contact/user-mail') }}">
                         {{ csrf_field() }}
                         @if($errors->any())
                             @foreach($errors as $error)
