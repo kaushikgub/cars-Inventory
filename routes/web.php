@@ -17,11 +17,14 @@ Route::get('/', function () {
 
 
 Route::get('admin-panel', 'AdminController@loadAdminLoginIndex');
+Route::post('admin-panel', 'AdminController@loginAttempted');
+Route::get('admin-logout', 'AdminController@logoutAttempted');
 Route::get('admin-panel/car-list', 'AdminController@loadListingIndex')->middleware('admin');
 Route::get('admin-panel/car-upload', 'AdminController@loadCarUploadIndex')->middleware('admin');
 
 
 Route::get('login/', 'LoginController@loadLoginIndex');
 Route::get('register/', 'LoginController@loadRegisterIndex');
+Route::post('register/', 'LoginController@loadRegisterIndex');
 Route::get('contact/', 'ContactController@loadContactIndex');
 Route::post('contact/user-mail/', 'ContactController@contactUserMassage');

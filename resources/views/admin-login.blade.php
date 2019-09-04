@@ -38,18 +38,18 @@
     </nav>
     <div class="container mexico-register-wrap">
         <div class="row">
-            <h3>Login As Admin</h3>
-            <form method="post" action="#">
+            <h3 id="massage">Login As Admin</h3>
+            <form id="login_form">
                 <div class="col-lg-6 col-lg-offset-3 mexico-register">
-                    <div class="form-group required" data-type="text" data-required="true">
-                        <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email" name="email">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" class="form-control" placeholder="Email" name="email" required>
                     </div>
-                    <div class="form-group required" data-type="text" data-required="true">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="*************" name="password">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" class="form-control" placeholder="******" name="password" required>
                     </div>
-                    <div class="form-group" data-type="submit">
+                    <div class="form-group">
                         <button id="btn" type="submit" class="btn-default">Login</button>
                     </div>
                 </div>
@@ -57,8 +57,34 @@
         </div>
     </div>
 </header>
-
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script language="JavaScript" type="text/javascript">
+    $(document).on('submit', '#login_form', function () {
+        let formData = new FormData(this);
+        formData.append('_token', '{{ csrf_token() }}');
+        $.ajax({
+            method: 'post',
+            data: formData,
+            url: '{{ url('admin-panel') }}',
+            contentType: false,
+            processData: false,
+            cache: false,
+            success: function (result) {
+                console.log(result);
+                if (result === 'Login Successful'){
+                    $('#massage').text(result);
+                    window.location = '{{ url('/admin-panel/car-list') }}';
+                } else {
+                    $('#massage').text(result);
+                }
+            },
+            error: function (xhr) {
+                console.log(xhr);
+            }
+        });
+        return false;
+    })
+</script>
 </body>
 </html>
