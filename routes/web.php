@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
 Route::get('admin-panel', 'AdminController@loadAdminLoginIndex');
 Route::get('admin-panel/car-list', 'AdminController@loadListingIndex')->middleware('admin');
 Route::get('admin-panel/car-upload', 'AdminController@loadCarUploadIndex')->middleware('admin');
