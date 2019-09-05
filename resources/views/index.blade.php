@@ -25,10 +25,13 @@
             </div>
             <div class="modal-body text-center" style="font-family: 'Nunito', sans-serif;">
                 <h2 style="font-weight: lighter; color: #1F2095">You must be logged in to <br> view the inventory</h2>
-                <h4 style="margin-top: 3rem">Please either create an account or login with your <br> account to view the current inventory</h4>
+                <h4 style="margin-top: 3rem">Please either create an account or login with your <br> account to view the
+                    current inventory</h4>
                 <div style="margin-top: 3rem; margin-bottom: 3rem">
-                    <a style="width: 20rem; background: #FB246A; color: white" class="btn btn-lg"  href="{{ asset('login/') }}">Login</a>
-                    <a style="width: 20rem; background: #20279B; color: white;" class="btn btn-lg" href="{{ asset('register/') }}">Create an account</a>
+                    <a style="width: 20rem; background: #FB246A; color: white" class="btn btn-lg"
+                       href="{{ asset('login/') }}">Login</a>
+                    <a style="width: 20rem; background: #20279B; color: white;" class="btn btn-lg"
+                       href="{{ asset('register/') }}">Create an account</a>
                 </div>
             </div>
             <div style="padding-bottom: 3rem" class="modal-footer">
@@ -78,42 +81,38 @@
     </nav>
 </header>
 
+<div id="car-model-data"></div>
+
+<div id="cq-search-result" style="display:none"></div>
+
+
 <section class="mexico-search-section">
     <div class="container mexico-search-wrap">
         <div class="row">
-            <form method="post" action="#">
+            <form id="car_search">
                 <div class="col-lg-3 mexico-search1">
-                    <div class="form-group required" data-type="text" data-required="true">
-                        <select class="select_box">
-                            <option value="1">Year</option>
-                            <option value="2">2005</option>
-                            <option value="3">2006</option>
-                            <option value="4">2007</option>
+                    <div class="form-group">
+                        <select id="car-years" name="car-years" class="select_box">
+
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-3 mexico-search1">
-                    <div class="form-group required" data-type="text" data-required="true">
-                        <select class="select_box">
-                            <option value="1">Make</option>
-                            <option value="2">BMW</option>
-                            <option value="3">Daewoo</option>
-                            <option value="4">Honda</option>
+                    <div class="form-group">
+                        <select name="car-makes" id="car-makes" class="select_box">
+
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-3 mexico-search1">
-                    <div class="form-group required" data-type="text" data-required="true">
-                        <select class="select_box">
-                            <option value="1">Model</option>
-                            <option value="2">Lanos</option>
-                            <option value="3">Falcon</option>
-                            <option value="4">Ranger</option>
+                    <div class="form-group">
+                        <select name="car-models" id="car-models" class="select_box">
+
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="form-group" data-type="submit">
+                    <div class="form-group">
                         <button type="submit" class="btn-default">Search</button>
                     </div>
                 </div>
@@ -456,14 +455,47 @@
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script>
-    $(document).ready(function () {
-        if ('{{session('admin_id')}}'){
+<script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.4.js"></script>
 
-        } else {
-            $('#welcome_modal').modal('show');
-        }
-    })
+<script language="JavaScript" type="text/javascript">
+    $(document).ready(function () {
+        {{--if ('{{session('admin_id')}}') {--}}
+
+        {{--} else {--}}
+        {{--    $('#welcome_modal').modal('show');--}}
+        {{--}--}}
+
+        var carquery = new CarQuery();
+        carquery.init();
+
+        carquery.setFilters({sold_in_us: true});
+
+        carquery.initYearMakeModelTrim('car-years', 'car-makes', 'car-models');
+        carquery.init('2019');
+
+        carquery.year_select_min = 1990;
+        carquery.year_select_max = 2022;
+    });
+
+    $(document).on('submit', '#car_search', function () {
+        let formData = new FormData(this);
+        formData.append('_token', '{{ csrf_token() }}');
+        $.ajax({
+            method: 'post',
+            data: formData,
+            url: '{{ url('car/search') }}',
+            contentType: false,
+            processData: false,
+            cache: false,
+            success: function (result) {
+                console.log(result);
+            },
+            error: function (xhr) {
+                console.log(xhr);
+            }
+        });
+        return false;
+    });
 </script>
 </body>
 </html>

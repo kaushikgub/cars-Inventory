@@ -70,63 +70,58 @@
                         <h3><img src="{{ asset('images/mexico-icon17.png') }}" alt="icon17">General</h3>
                         <hr>
                         <div class="col-lg-12 mexico-upload3">
-                            <div class="form-group required" data-type="text" data-required="true">
-                                <label>Year Of The Car</label>
-                                <select class="select_box">
-                                    <option value="1"></option>
-                                    <option value="2">2005</option>
-                                    <option value="3">2006</option>
-                                    <option value="4">2007</option>
+                            <div class="form-group required">
+                                <label for="car-years">Year Of The Car</label>
+                                <select id="car-years" name="car_years"  class="select_box">
+
                                 </select>
                             </div>
-                            <div class="form-group required" data-type="text" data-required="true">
-                                <label>Make Of The Car</label>
-                                <select class="select_box">
-                                    <option value="1"></option>
-                                    <option value="2">BMW</option>
-                                    <option value="3">Daewoo</option>
-                                    <option value="4">Honda</option>
+                            <div class="form-group required">
+                                <label for="car-makes">Make Of The Car</label>
+                                <select name="car_makes" id="car-makes"  class="select_box">
+
                                 </select>
                             </div>
-                            <div class="form-group required" data-type="text" data-required="true">
-                                <label>Model Of The Car</label>
-                                <select class="select_box">
-                                    <option value="1"></option>
-                                    <option value="2">Lanos</option>
-                                    <option value="3">Falcon</option>
-                                    <option value="4">Ranger</option>
+                            <div class="form-group required">
+                                <label for="car-models">Model Of The Car</label>
+                                <select  name="car_models" id="car-models" class="select_box">
+
                                 </select>
                             </div>
-                            <div class="form-group required" data-type="text" data-required="true">
+                            <div class="form-group required">
                                 <label>Asking Price</label>
-                                <input type="text" class="form-control" name="upload_price">
+                                <input type="text" class="form-control" name="asking_price">
                             </div>
-                            <div class="form-group required" data-type="text" data-required="true">
+                            <div class="form-group" data-type="text">
                                 <label>Title</label>
-                                <select class="select_box">
+                                <select class="select_box" name="has_title">
                                     <option value="1"></option>
                                     <option value="2">Cash For Cars</option>
                                     <option value="3">Cash For Junk Cars</option>
                                     <option value="4">Sell My Car</option>
                                 </select>
                             </div>
-                            <div class="form-group required" data-type="text" data-required="true">
+                            <div class="form-group" data-type="text">
                                 <label>Registration</label>
-                                <select class="select_box">
+                                <select class="select_box" name="has_registration">
                                     <option value="1"></option>
                                     <option value="2">2015</option>
                                     <option value="3">2016</option>
                                     <option value="4">2017</option>
                                 </select>
                             </div>
-                            <div class="form-group required" data-type="text" data-required="true">
+                            <div class="form-group" data-type="text">
                                 <label>Condition</label>
-                                <select class="select_box">
+                                <select class="select_box" name="condition">
                                     <option value="1"></option>
                                     <option value="2">New</option>
                                     <option value="3">Old</option>
                                     <option value="4">Repair</option>
                                 </select>
+                            </div>
+                            <div class="form-group required" data-type="text" data-required="true">
+                                <label>Number Of Cylinders</label>
+                                <input type="text" class="form-control" name="cylinders">
                             </div>
                         </div>
                     </div>
@@ -137,7 +132,8 @@
                         <hr>
                         <div class="col-lg-12 mexico-license3">
                             <div class="col-lg-3 mexico-license4">
-                                <img src="{{ asset('images/mexico-img3.png') }}" alt="img3">
+                                <input name="car_image_1" style="opacity: 0; height: 130px; width: 200px" type="file">
+                                <img style="margin-top: -156px" src="{{ asset('images/mexico-img3.png') }}" alt="img3">
                             </div>
                             <!--col-lg-3-->
                             <div class="col-lg-3 mexico-license5">
@@ -206,5 +202,18 @@
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.4.js"></script>
+<script language="JavaScript" type="text/javascript">
+    var carquery = new CarQuery();
+    carquery.init();
+
+    carquery.setFilters({sold_in_us: true});
+
+    carquery.initYearMakeModelTrim('car-years', 'car-makes', 'car-models');
+    carquery.init('2019');
+
+    carquery.year_select_min = 1990;
+    carquery.year_select_max = 2022;
+</script>
 </body>
 </html>

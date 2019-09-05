@@ -10,6 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route::get("/email", function() {
+//    \Illuminate\Support\Facades\Mail::raw('Now I know how to send emails with Laravel', function($message)
+//    {
+//        $message->subject('Hi There!!');
+//        $message->from(config('mail.from.address'), config("app.name"));
+//        $message->to('kaushik.gub@gmail.com');
+//    });
+//});
 
 Route::get('/', function () {
     return view('index');
@@ -27,4 +35,5 @@ Route::get('login/', 'LoginController@loadLoginIndex');
 Route::get('register/', 'LoginController@loadRegisterIndex');
 Route::post('register/', 'LoginController@loadRegisterIndex');
 Route::get('contact/', 'ContactController@loadContactIndex');
-Route::post('contact/user-mail/', 'ContactController@contactUserMassage');
+Route::post('car/search', 'CarController@CarSearch');
+

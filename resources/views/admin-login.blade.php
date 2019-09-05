@@ -73,7 +73,6 @@
             success: function (result) {
                 console.log(result);
                 if (result === 'Login Successful'){
-                    $('#massage').text(result);
                     window.location = '{{ url('/admin-panel/car-list') }}';
                 } else {
                     $('#massage').text(result);
