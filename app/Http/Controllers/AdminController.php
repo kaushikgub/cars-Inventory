@@ -34,14 +34,6 @@ class AdminController extends Controller
         return response()->json('Login Unsuccessful');
     }
 
-    public function loadListingIndex(){
-        return view('admin-list');
-    }
-
-    public function loadCarUploadIndex(){
-        return view('admin-car-upload');
-    }
-
     public function logoutAttempted(){
         session()->flush();
         return redirect('admin-panel');

@@ -57,19 +57,6 @@
                         <a class="navbar-brand" href="{{url('/')}}"><img src="{{ asset('images/mexico-logo.png') }}">
                         </a>
                     </div>
-                    {{--                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">--}}
-                    {{--                            <ul class="nav navbar-nav navbar-right">--}}
-                    {{--                                <li>--}}
-                    {{--                                    <a class="active" href="index.html">Home</a>--}}
-                    {{--                                </li>--}}
-                    {{--                                <li>--}}
-                    {{--                                    <a href="listings.html">Listings</a>--}}
-                    {{--                                </li>--}}
-                    {{--                                <li>--}}
-                    {{--                                    <a href="contact.html">Contact</a>--}}
-                    {{--                                </li>--}}
-                    {{--                            </ul>--}}
-                    {{--                        </div>--}}
                 </div>
                 <div class="col-lg-4 mexico-nav-extra">
                     <a class="one" href="{{ url('contact/') }}">Contact Us</a>
@@ -147,7 +134,7 @@
         </div>
     </div>
     <div class="container mexico-sale-wrap">
-        <div class="row">
+        <div class="row" id="inventory_container">
             <div class="col-lg-4 mexico-sale-img">
                 <img src="images/car-img/mexico-car-img1.png" alt="img1">
                 <div class="mexico-sale-btn">
@@ -173,261 +160,11 @@
                 </div>
                 <div class="mexico-sale-text3">
                     <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Honda</h3></a>
-                </div>
-            </div>
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img2.png" alt="img2">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$67.000</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn2" type="button" class="btn-default"><img src="images/mexico-icon8.png"
-                                                                                 alt="icon8">Save
-                        </button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2010</li>
-                        <li>Diesel</li>
-                    </ul>
-                    <ul class="second2">
-                        <li>Manual</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2010 Toyota RAV4</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Toyota</h3></a>
-                </div>
-            </div>
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img3.png" alt="img3">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$98.000</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn2" type="button" class="btn-default"><img src="images/mexico-icon8.png"
-                                                                                 alt="icon8">Save
-                        </button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2008</li>
-                        <li>Gasoline</li>
-                    </ul>
-                    <ul class="second3">
-                        <li>Automatic</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2008 Audi R8</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Audi</h3></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container mexico-sale-wrap">
-        <div class="row">
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img1.png" alt="img1">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button type="button" class="btn-default">SOLD</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$25.000</button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2005</li>
-                        <li>Gasoline</li>
-                    </ul>
-                    <ul class="second">
-                        <li>Automatic</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2005 Honda Civic</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Honda</h3></a>
-                </div>
-            </div>
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img2.png" alt="img2">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$67.000</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn2" type="button" class="btn-default"><img src="images/mexico-icon8.png"
-                                                                                 alt="icon8">Save
-                        </button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2010</li>
-                        <li>Diesel</li>
-                    </ul>
-                    <ul class="second2">
-                        <li>Manual</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2010 Toyota RAV4</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Toyota</h3></a>
-                </div>
-            </div>
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img3.png" alt="img3">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$98.000</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn2" type="button" class="btn-default"><img src="images/mexico-icon8.png"
-                                                                                 alt="icon8">Save
-                        </button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2008</li>
-                        <li>Gasoline</li>
-                    </ul>
-                    <ul class="second3">
-                        <li>Automatic</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2008 Audi R8</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Audi</h3></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container mexico-sale-wrap">
-        <div class="row">
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img1.png" alt="img1">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button type="button" class="btn-default">SOLD</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$25.000</button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2005</li>
-                        <li>Gasoline</li>
-                    </ul>
-                    <ul class="second">
-                        <li>Automatic</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2005 Honda Civic</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Honda</h3></a>
-                </div>
-            </div>
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img2.png" alt="img2">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$67.000</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn2" type="button" class="btn-default"><img src="images/mexico-icon8.png"
-                                                                                 alt="icon8">Save
-                        </button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2010</li>
-                        <li>Diesel</li>
-                    </ul>
-                    <ul class="second2">
-                        <li>Manual</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2010 Toyota RAV4</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Toyota</h3></a>
-                </div>
-            </div>
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img3.png" alt="img3">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$98.000</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn2" type="button" class="btn-default"><img src="images/mexico-icon8.png"
-                                                                                 alt="icon8">Save
-                        </button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2008</li>
-                        <li>Gasoline</li>
-                    </ul>
-                    <ul class="second3">
-                        <li>Automatic</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2008 Audi R8</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Audi</h3></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-{{--    <section class="mexico-nav-section">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12 mexico-nav-bottom">--}}
-{{--                <ul>--}}
-{{--                <li><a href="index.html">Home</a></li>--}}
-{{--                <li><a href="listings.html">Listings</a></li>--}}
-{{--                <li><a href="contact.html">Contact</a></li>--}}
-{{--                </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
 
 <section class="mexico-social-section">
     <div class="container">
@@ -458,6 +195,52 @@
 <script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.4.js"></script>
 
 <script language="JavaScript" type="text/javascript">
+
+    function loadInventory(url){
+        $.ajax({
+            method: 'get',
+            url: url,
+            success: function (result) {
+                console.log(result);
+                $('#inventory_container').empty();
+                $.each(result.data, function (key, value) {
+                    let element = '<div style="margin-bottom: 3rem" class="col-lg-4 mexico-sale-img">\n' +
+                        '                <img src="{{ asset('storage')}}/'+ value.image_1 +'" alt="img1">\n' +
+                        '                <div class="mexico-sale-btn">\n' +
+                        '                    <a href="#">\n' +
+                        '                        <button type="button" class="btn-default">'+ value.available +'</button>\n' +
+                        '                    </a>\n' +
+                        '                    <a href="#">\n' +
+                        '                        <button id="btn" type="button" class="btn-default">$'+ value.asking_price +'</button>\n' +
+                        '                    </a>\n' +
+                        '                </div>\n' +
+                        '                <div class="mexico-sale-text">\n' +
+                        '                    <ul>\n' +
+                        '                        <li>'+ value.car_years +'</li>\n' +
+                        '                        <li>Gasoline</li>\n' +
+                        '                    </ul>\n' +
+                        '                    <ul class="second">\n' +
+                        '                        <li>'+ value.transmission +'</li>\n' +
+                        '                        <li>28.000</li>\n' +
+                        '                    </ul>\n' +
+                        '                </div>\n' +
+                        '                <div class="mexico-sale-text2">\n' +
+                        '                    <a href="{{ url('car/inventory') }}/'+ value.id +'"><h2>'+ value.car_years +' '+ value.car_makes +' '+ value.car_models +'</h2></a>\n' +
+                        '                </div>\n' +
+                        '                <div class="mexico-sale-text3">\n' +
+                        '                    <a href="{{ url('car/inventory') }}/'+ value.id +'"><h3><img src="images/mexico-icon7.png" alt="icon7">'+ value.car_makes +'</h3></a>\n' +
+                        '                </div>\n' +
+                        '            </div>';
+
+                    $('#inventory_container').append(element);
+                });
+            },
+            error: function (xhr) {
+                console.log(xhr)
+            }
+        })
+    }
+
     $(document).ready(function () {
         {{--if ('{{session('admin_id')}}') {--}}
 
@@ -471,10 +254,13 @@
         carquery.setFilters({sold_in_us: true});
 
         carquery.initYearMakeModelTrim('car-years', 'car-makes', 'car-models');
-        carquery.init('2019');
+        carquery.init(2019);
 
         carquery.year_select_min = 1990;
         carquery.year_select_max = 2022;
+
+        let url = '{{ url('car/inventory/') }}';
+        loadInventory(url)
     });
 
     $(document).on('submit', '#car_search', function () {
