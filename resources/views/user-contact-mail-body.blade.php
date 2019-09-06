@@ -7,10 +7,10 @@
 <head>
 </head>
 <body>
-    <p>Hi, I am {{$name}}</p>
-    <p>My Email address is: {{$email}}</p>
+    <p>Hi, I am </p>
+    <p>My Email address is: </p>
     <br>
-    <p>{{$massage}}</p>
+    <p>Massage</p>
 </body>
 </html>
 

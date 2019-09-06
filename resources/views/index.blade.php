@@ -58,6 +58,7 @@
                 </div>
                 <div class="col-lg-4 mexico-nav-extra">
                     <a class="one" href="{{ url('contact/') }}">Contact Us</a>
+                    <a class="three" href="{{ url('license/') }}">License</a>
                     <a class="three" href="{{url('logout')}}"><img src="{{ asset('images/mexico-icon3.png') }}"
                                                                   alt="icon3">Sign Out </a>
                 </div>
@@ -124,8 +125,8 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a class="first" href="#">A-Z<span>Z-A</span></a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Newest</a></li>
-                        <li><a href="#">Price</a></li>
+                        <li id="sorting" data-sort="new" style="cursor: pointer"><a>Newest</a></li>
+                        <li id="sorting" data-sort="price" style="cursor: pointer"><a>Price</a></li>
                     </ul>
                 </div>
             </div>
@@ -133,33 +134,6 @@
     </div>
     <div class="container mexico-sale-wrap">
         <div class="row" id="inventory_container">
-            <div class="col-lg-4 mexico-sale-img">
-                <img src="images/car-img/mexico-car-img1.png" alt="img1">
-                <div class="mexico-sale-btn">
-                    <a href="#">
-                        <button type="button" class="btn-default">SOLD</button>
-                    </a>
-                    <a href="#">
-                        <button id="btn" type="button" class="btn-default">$25.000</button>
-                    </a>
-                </div>
-                <div class="mexico-sale-text">
-                    <ul>
-                        <li>2005</li>
-                        <li>Gasoline</li>
-                    </ul>
-                    <ul class="second">
-                        <li>Automatic</li>
-                        <li>28.000</li>
-                    </ul>
-                </div>
-                <div class="mexico-sale-text2">
-                    <a href="#"><h2>2005 Honda Civic</h2></a>
-                </div>
-                <div class="mexico-sale-text3">
-                    <a href="#"><h3><img src="images/mexico-icon7.png" alt="icon7">Honda</h3></a>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -194,44 +168,55 @@
 
 <script language="JavaScript" type="text/javascript">
 
+    function appendCar(data) {
+        $('#inventory_container').empty();
+        if (data.length === 0){
+            $('#inventory_container').append('<p id="massage" class="text-center">No data found !</p>');
+        } else {
+            $.each(data, function (key, value) {
+                if (value.available === 'Sold'){
+                    var available = '<button type="button" class="btn-default">Sold</button>'
+                } else {
+                    available = '';
+                }
+                let element = '<div style="margin-bottom: 3rem" class="col-lg-4 mexico-sale-img">\n' +
+                    '                <img style="width: 100%; height: 230px" src="{{ asset('storage')}}/'+ value.image_1 +'" alt="img1">\n' +
+                    '                <div class="mexico-sale-btn">\n' +
+                    '                    <a href="#">\n' +
+                    '                        '+ available +'\n' +
+                    '                    </a>\n' +
+                    '                    <a href="#">\n' +
+                    '                        <button id="btn" type="button" class="btn-default">$'+ value.asking_price +'</button>\n' +
+                    '                    </a>\n' +
+                    '                </div>\n' +
+                    '                <div class="mexico-sale-text">\n' +
+                    '                    <ul>\n' +
+                    '                        <li>'+ value.car_years +'</li>\n' +
+                    '                        <li></li>\n' +
+                    '                    </ul>\n' +
+                    '                    <ul class="second">\n' +
+                    '                        <li>'+ value.transmission +'</li>\n' +
+                    '                    </ul>\n' +
+                    '                </div>\n' +
+                    '                <div class="mexico-sale-text2">\n' +
+                    '                    <a href="{{ url('car/inventory') }}/'+ value.id +'"><h2>'+ value.car_years +' '+ value.car_makes +' '+ value.car_models +'</h2></a>\n' +
+                    '                </div>\n' +
+                    '                <div class="mexico-sale-text3">\n' +
+                    '                    <a href="{{ url('car/inventory') }}/'+ value.id +'"><h3><img src="images/mexico-icon7.png" alt="icon7">'+ value.car_makes +'</h3></a>\n' +
+                    '                </div>\n' +
+                    '            </div>';
+
+                $('#inventory_container').append(element);
+            });
+        }
+    }
     function loadInventory(url){
         $.ajax({
             method: 'get',
             url: url,
             success: function (result) {
                 console.log(result);
-                $('#inventory_container').empty();
-                $.each(result.data, function (key, value) {
-                    let element = '<div style="margin-bottom: 3rem" class="col-lg-4 mexico-sale-img">\n' +
-                        '                <img style="width: 100%; height: 230px" src="{{ asset('storage')}}/'+ value.image_1 +'" alt="img1">\n' +
-                        '                <div class="mexico-sale-btn">\n' +
-                        '                    <a href="#">\n' +
-                        '                        <button type="button" class="btn-default">'+ value.available +'</button>\n' +
-                        '                    </a>\n' +
-                        '                    <a href="#">\n' +
-                        '                        <button id="btn" type="button" class="btn-default">$'+ value.asking_price +'</button>\n' +
-                        '                    </a>\n' +
-                        '                </div>\n' +
-                        '                <div class="mexico-sale-text">\n' +
-                        '                    <ul>\n' +
-                        '                        <li>'+ value.car_years +'</li>\n' +
-                        '                        <li>Gasoline</li>\n' +
-                        '                    </ul>\n' +
-                        '                    <ul class="second">\n' +
-                        '                        <li>'+ value.transmission +'</li>\n' +
-                        '                        <li>28.000</li>\n' +
-                        '                    </ul>\n' +
-                        '                </div>\n' +
-                        '                <div class="mexico-sale-text2">\n' +
-                        '                    <a href="{{ url('car/inventory') }}/'+ value.id +'"><h2>'+ value.car_years +' '+ value.car_makes +' '+ value.car_models +'</h2></a>\n' +
-                        '                </div>\n' +
-                        '                <div class="mexico-sale-text3">\n' +
-                        '                    <a href="{{ url('car/inventory') }}/'+ value.id +'"><h3><img src="images/mexico-icon7.png" alt="icon7">'+ value.car_makes +'</h3></a>\n' +
-                        '                </div>\n' +
-                        '            </div>';
-
-                    $('#inventory_container').append(element);
-                });
+                appendCar(result);
             },
             error: function (xhr) {
                 console.log(xhr)
@@ -240,7 +225,7 @@
     }
 
     $(document).ready(function () {
-        if ('{{session('user_id')}}') {
+        if ('{{session('user_id')}}' || '{{ session('admin_id') }}') {
 
         } else {
             $('#welcome_modal').modal('show');
@@ -257,7 +242,7 @@
         carquery.year_select_min = 1990;
         // carquery.year_select_max = 2022;
 
-        let url = '{{ url('car/inventory/') }}';
+        let url = '{{ url('car/inventory/data/all') }}';
         loadInventory(url)
     });
 
@@ -273,6 +258,7 @@
             cache: false,
             success: function (result) {
                 console.log(result);
+                appendCar(result);
             },
             error: function (xhr) {
                 console.log(xhr);
@@ -280,6 +266,13 @@
         });
         return false;
     });
+
+    $(document).on('click', '#sorting', function () {
+        let sortType = $(this).data('sort');
+        let url = '{{ url('car/inventory/data') }}/'+sortType;
+        loadInventory(url);
+        return false;
+    })
 </script>
 </body>
 </html>

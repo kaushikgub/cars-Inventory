@@ -66,33 +66,34 @@
                 <div class="mexico-listing2">
                     <h3><img src="{{ asset('images/mexico-icon19.png') }}" alt="icon19">My Listings</h3>
                     <hr>
-                    <div class="col-lg-12 mexico-listing3">
-                        <div class="col-lg-3 mexico-listing-img">
-                            <img src="{{ asset('images/car-img/mexico-car-img4.png') }}" alt="img4">
+                    @foreach($cars as $car)
+                        <div class="col-lg-12 mexico-listing3">
+                            <div class="col-lg-3 mexico-listing-img">
+                                <img style="height: 150px; width: 210px" src="{{ asset('storage') }}/{{ $car->image_1 }}" alt="img4">
+                            </div>
+                            <div class="col-lg-4 mexico-listing-content">
+                                <a href="#">
+                                    <button class="btn-default">$ {{ $car->asking_price}}</button>
+                                </a>
+                                <a href="#"><h2>{{ $car->car_years }} {{ $car->car_makes }} {{ $car->car_models }}</h2></a>
+                                <p>Lorem Ipsum Dolor Sit Amet</p>
+                                <a href="#"><h4><img src="{{ asset('images/mexico-icon7.png') }}" alt="icon7">{{ $car->car_makes }}</h4></a>
+                            </div>
+                            <div class="col-lg-5 mexico-listing-content2">
+                                <a href="{{ url('admin-panel/car-edit') }}/{{ $car->id }}">
+                                    <button id="btn" class="btn-default"><img src="{{ asset('images/mexico-icon20.png') }}" alt="icon20">Edit
+                                    </button>
+                                </a>
+                                <a href="{{ url('admin-panel/car-delete') }}/{{ $car->id }}">
+                                    <button id="btn2" class="btn-default"><img src="{{ asset('images/mexico-icon21.png') }}" alt="icon21">Delete
+                                    </button>
+                                </a>
+                                <a href="{{ url('admin-panel/car-sell') }}/{{ $car->id }}">
+                                    <button id="btn3" class="btn-default"><img src="{{ asset('images/mexico-icon21.png') }}" alt="icon22">{{ $car->available }}</button>
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-lg-4 mexico-listing-content">
-                            <a href="#">
-                                <button class="btn-default">$25.000</button>
-                            </a>
-                            <a href="#"><h2>2005 Honda Civic</h2></a>
-                            <p>Lorem Ipsum Dolor Sit Amet</p>
-                            <a href="#"><h4><img src="{{ asset('images/mexico-icon7.png') }}" alt="icon7">Honda</h4></a>
-                        </div>
-                        <div class="col-lg-5 mexico-listing-content2">
-                            <a href="#">
-                                <button id="btn" class="btn-default"><img src="{{ asset('images/mexico-icon20.png') }}" alt="icon20">Edit
-                                </button>
-                            </a>
-                            <a href="#">
-                                <button id="btn2" class="btn-default"><img src="{{ asset('images/mexico-icon21.png') }}" alt="icon21">Delect
-                                </button>
-                            </a>
-                            <a href="#">
-                                <button id="btn3" class="btn-default"><img src="{{ asset('images/mexico-icon21.png') }}" alt="icon22">Sold
-                                </button>
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <!--col-lg-9-->

@@ -64,7 +64,7 @@
                         <input minlength="6" type="password" id="password_confirmation" class="form-control" placeholder="******" name="password_confirmation" required>
                     </div>
                     <div class="checkbox">
-                        <input type="checkbox" id="checkbox" name="" value="">
+                        <input type="checkbox" id="checkbox" name="" value="" checked>
                         <label for="checkbox"><span>by checking this box you agree to receive emails from Cars for Mexico</span></label>
                     </div>
                     <div class="form-group" data-type="submit">

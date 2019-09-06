@@ -18,7 +18,13 @@ class ContactController extends Controller
             'subject' => 'required|max:255',
             'massage' => 'required',
         ]);
-        Mail::to('kaushik.gub@gmail.com')->send(new UserMail($request['name'], $request['email'], $request['subject'], $request['massage']));
+        $data = $request->except('_token', 'massage');
+        $data['bodyMassage'] = $request['massage'];
+        Mail::send('user-contact-mail-body', $data, function ($massage) use ($data){
+            $massage->from($data['email']);
+            $massage->to('kaushik.gub@gmail.com');
+            $massage->subject($data['subject']);
+        });
         return redirect('/');
     }
 }

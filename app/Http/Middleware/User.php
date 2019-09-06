@@ -15,7 +15,7 @@ class User
      */
     public function handle($request, Closure $next)
     {
-        if (session('user_id')){
+        if (session('user_id') || session('admin_id')){
             return $next($request);
         }
         else{
