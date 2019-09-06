@@ -9,6 +9,7 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
@@ -35,8 +36,8 @@
                 </div>
                 <div class="col-lg-4 mexico-nav-extra">
                     <a class="one" href="{{ url('contact/') }}">Contact Us</a>
-                    <a class="three" href="{{url('login')}}"><img src="{{ asset('images/mexico-icon3.png') }}"
-                                                                  alt="icon3">Sign in or Register </a>
+                    <a class="three" href="{{url('logout')}}"><img src="{{ asset('images/mexico-icon3.png') }}"
+                                                                   alt="icon3">Sign Out </a>
                 </div>
             </div>
         </div>
@@ -52,7 +53,7 @@
             <div class="col-lg-4 mexico-internal-heading2">
                 <span>Price</span>
                 <a href="#">
-                    <button type="button" class="btn-default">${{$car->asking_price}}</button>
+                    <button type="button" class="btn-default">$ {{$car->asking_price}}</button>
                 </a>
             </div>
         </div>
@@ -69,16 +70,16 @@
                 <div id="slider" class="flexslider">
                     <ul class="slides">
                         <li>
-                            <img src="{{ asset('storage') }}/{{$car->image_1}}" alt="slides-01"/>
+                            <img style="width: 765px; height: 420px" src="{{ asset('storage') }}/{{$car->image_1}}" alt="slides-01" />
                         </li>
                         <li>
-                            <img src="{{ asset('storage') }}/{{$car->image_2}}" alt="slides-01"/>
+                            <img style="width: 765px; height: 420px" src="{{ asset('storage') }}/{{$car->image_2}}" alt="slides-01" />
                         </li>
                         <li>
-                            <img src="{{ asset('storage') }}/{{$car->image_3}}" alt="slides-01"/>
+                            <img style="width: 765px; height: 420px" src="{{ asset('storage') }}/{{$car->image_3}}" alt="slides-01" />
                         </li>
                         <li>
-                            <img src="{{ asset('storage') }}/{{$car->image_4}}" alt="slides-01"/>
+                            <img style="width: 765px; height: 420px" src="{{ asset('storage') }}/{{$car->image_4}}" alt="slides-01" />
                         </li>
                         <!-- items mirrored twice, total of 12 -->
                     </ul>
@@ -86,16 +87,16 @@
                 <div id="carousel" class="flexslider">
                     <ul class="slides">
                         <li>
-                            <img src="{{ asset('storage') }}/{{$car->image_1}}" alt="slides-01"/>
+                            <img style="height: 124px; width: 210px" src="{{ asset('storage') }}/{{$car->image_1}}" alt="slides-01" />
                         </li>
                         <li>
-                            <img src="{{ asset('storage') }}/{{$car->image_2}}" alt="slides-02"/>
+                            <img style="height: 124px; width: 210px" src="{{ asset('storage') }}/{{$car->image_2}}" alt="slides-01" />
                         </li>
                         <li>
-                            <img src="{{ asset('storage') }}/{{$car->image_3}}" alt="slides-03"/>
+                            <img style="height: 124px; width: 210px" src="{{ asset('storage') }}/{{$car->image_3}}" alt="slides-01" />
                         </li>
                         <li>
-                            <img src="{{ asset('storage') }}/{{$car->image_4}}" alt="slides-04"/>
+                            <img style="height: 124px; width: 210px" src="{{ asset('storage') }}/{{$car->image_4}}" alt="slides-01" />
                         </li>
                         <!-- items mirrored twice, total of 12 -->
                     </ul>
@@ -112,16 +113,13 @@
                     <h3><img src="{{asset('images/mexico-icon25.png')}}" alt="icon25">Specifications</h3>
                     <hr>
                     <ul>
-                        <li>Has title?<span>Yes</span></li>
-                        <li>Has Registration?<span>Yes</span></li>
-                        <li>Brand<span>Honda</span></li>
-                        <li>Model<span>Civic</span></li>
-                        <li>Manufacturer Year<span>2005</span></li>
-                        <li>Number of door<span>4</span></li>
-                        <li>Transmission<span>Manual</span></li>
-                        <li>Fuel Type<span>Fuel</span></li>
-                        <li>Number Of Cylinders<span>4</span></li>
-                        <li>Mileage<span>10 ft</span></li>
+                        <li>Has title?<span>{{ $car->has_title }}</span></li>
+                        <li>Has Registration?<span>{{ $car->has_registration }}</span></li>
+                        <li>Brand<span>{{ $car->car_makes }}</span></li>
+                        <li>Model<span>{{ $car->car_models }}</span></li>
+                        <li>Manufacturer Year<span>{{ $car->car_years }}</span></li>
+                        <li>Transmission<span>{{ $car->transmission }}</span></li>
+                        <li>Number Of Cylinders<span>{{ $car->cylinders }}</span></li>
                     </ul>
                 </div>
             </div>

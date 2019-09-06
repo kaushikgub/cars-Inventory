@@ -26,18 +26,20 @@ Route::get('/', function () {
 
 Route::get('admin-panel', 'AdminController@loadAdminLoginIndex');
 Route::post('admin-panel', 'AdminController@loginAttempted');
-Route::get('admin-logout', 'AdminController@logoutAttempted');
+Route::get('admin-logout', 'AdminController@logoutAttempted')->middleware('admin');
 Route::get('admin-panel/car-list', 'CarController@loadListingIndex')->middleware('admin');
 Route::get('admin-panel/car-upload', 'CarController@loadCarUploadIndex')->middleware('admin');
 Route::post('admin-panel/car-upload', 'CarController@uploadCar')->middleware('admin');
 
 
-Route::get('login/', 'LoginController@loadLoginIndex');
-Route::get('register/', 'LoginController@loadRegisterIndex');
-Route::post('register/', 'LoginController@loadRegisterIndex');
-Route::get('contact/', 'ContactController@loadContactIndex');
-Route::post('contact/user-mail', 'ContactController@contactUserMassage');
+Route::get('register/', 'UserController@loadRegisterIndex');
+Route::post('register/', 'UserController@registration');
+Route::get('login/', 'UserController@loadLoginIndex');
+Route::post('login/', 'UserController@login');
+Route::get('logout/', 'UserController@logout')->middleware('user');
+Route::get('contact/', 'ContactController@loadContactIndex')->middleware('user');
+Route::post('contact/user-mail', 'ContactController@contactUserMassage')->middleware('user');
 Route::get('car/inventory', 'CarController@loadCarInIndexPage');
-Route::get('car/inventory/{id}', 'CarController@carDetails');
-Route::post('car/search', 'CarController@CarSearch');
+Route::get('car/inventory/{id}', 'CarController@carDetails')->middleware('user');
+Route::post('car/search', 'CarController@CarSearch')->middleware('user');
 

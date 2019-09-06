@@ -15,13 +15,11 @@
 
 </head>
 <body>
-<div class="modal fade" tabindex="-1" role="dialog" id="welcome_modal">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade" tabindex="-1" role="dialog" id="welcome_modal" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="margin-top: 10%">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+
             </div>
             <div class="modal-body text-center" style="font-family: 'Nunito', sans-serif;">
                 <h2 style="font-weight: lighter; color: #1F2095">You must be logged in to <br> view the inventory</h2>
@@ -34,7 +32,7 @@
                        href="{{ asset('register/') }}">Create an account</a>
                 </div>
             </div>
-            <div style="padding-bottom: 3rem" class="modal-footer">
+            <div class="modal-footer">
 
             </div>
         </div>
@@ -60,8 +58,8 @@
                 </div>
                 <div class="col-lg-4 mexico-nav-extra">
                     <a class="one" href="{{ url('contact/') }}">Contact Us</a>
-                    <a class="three" href="{{url('login')}}"><img src="{{ asset('images/mexico-icon3.png') }}"
-                                                                  alt="icon3">Sign in or Register </a>
+                    <a class="three" href="{{url('logout')}}"><img src="{{ asset('images/mexico-icon3.png') }}"
+                                                                  alt="icon3">Sign Out </a>
                 </div>
             </div>
         </div>
@@ -205,7 +203,7 @@
                 $('#inventory_container').empty();
                 $.each(result.data, function (key, value) {
                     let element = '<div style="margin-bottom: 3rem" class="col-lg-4 mexico-sale-img">\n' +
-                        '                <img src="{{ asset('storage')}}/'+ value.image_1 +'" alt="img1">\n' +
+                        '                <img style="width: 100%; height: 230px" src="{{ asset('storage')}}/'+ value.image_1 +'" alt="img1">\n' +
                         '                <div class="mexico-sale-btn">\n' +
                         '                    <a href="#">\n' +
                         '                        <button type="button" class="btn-default">'+ value.available +'</button>\n' +
@@ -242,11 +240,11 @@
     }
 
     $(document).ready(function () {
-        {{--if ('{{session('admin_id')}}') {--}}
+        if ('{{session('user_id')}}') {
 
-        {{--} else {--}}
-        {{--    $('#welcome_modal').modal('show');--}}
-        {{--}--}}
+        } else {
+            $('#welcome_modal').modal('show');
+        }
 
         var carquery = new CarQuery();
         carquery.init();
@@ -257,7 +255,7 @@
         carquery.init(2019);
 
         carquery.year_select_min = 1990;
-        carquery.year_select_max = 2022;
+        // carquery.year_select_max = 2022;
 
         let url = '{{ url('car/inventory/') }}';
         loadInventory(url)

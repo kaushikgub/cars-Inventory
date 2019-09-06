@@ -16,7 +16,23 @@ class CarController extends Controller
     }
 
     public function CarSearch(Request $request){
-        return response()->json($request);
+        $request->validate([
+            'car-years' => 'required|integer',
+        ]);
+
+        $makes = $request['car-makes'];
+        $model = $request['car-models'];
+
+        $cars = Car::where('car_years', $request['car-years'])
+            ->where(function ($query) use ($makes, $model) {
+                if ($makes !== null)
+                    $query->where('car_makes',  $makes);
+                if ($model !== null)
+                    $query->where('car_models',  $model);
+        })->get();
+
+
+        return response()->json($cars);
     }
 
     public function uploadCar(Request $request){
@@ -33,15 +49,18 @@ class CarController extends Controller
             'description' => 'nullable',
             'image_1' => 'required',
         ]);
+
         $data = $request->except('_token', 'image_1', 'image_2', 'image_3', 'image_4');
-        $image_1 = $request->file('image_1') === null ? null : $request->file('image_1')->storeAs('/image/'.$request['car_models'], time() . '.' . $request->file('image_1')->getClientOriginalExtension(), 'public');
-        $image_2 = $request->file('image_2') === null ? null : $request->file('image_2')->storeAs('/image/'.$request['car_models'], time() . '.' . $request->file('image_2')->getClientOriginalExtension(), 'public');
-        $image_3 = $request->file('image_3') === null ? null : $request->file('image_3')->storeAs('/image/'.$request['car_models'], time() . '.' . $request->file('image_3')->getClientOriginalExtension(), 'public');
-        $image_4 = $request->file('image_4') === null ? null : $request->file('image_4')->storeAs('/image/'.$request['car_models'], time() . '.' . $request->file('image_4')->getClientOriginalExtension(), 'public');
+        $image_1 = $request->file('image_1') === null ? null : $request->file('image_1')->storeAs('/image/'.$request['car_models'], '1-'.time() . '.' . $request->file('image_1')->getClientOriginalExtension(), 'public');
+        $image_2 = $request->file('image_2') === null ? null : $request->file('image_2')->storeAs('/image/'.$request['car_models'], '2-'.time() . '.' . $request->file('image_2')->getClientOriginalExtension(), 'public');
+        $image_3 = $request->file('image_3') === null ? null : $request->file('image_3')->storeAs('/image/'.$request['car_models'], '3-'.time() . '.' . $request->file('image_3')->getClientOriginalExtension(), 'public');
+        $image_4 = $request->file('image_4') === null ? null : $request->file('image_4')->storeAs('/image/'.$request['car_models'], '4-'.time() . '.' . $request->file('image_4')->getClientOriginalExtension(), 'public');
+
         $data['image_1'] = $image_1;
         $data['image_2'] = $image_2;
         $data['image_3'] = $image_3;
         $data['image_4'] = $image_4;
+
         $data['available'] = 'Available';
 
         Car::create($data);

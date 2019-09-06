@@ -48,8 +48,8 @@
                 </div>
                 <div class="col-lg-4 mexico-nav-extra">
                     <a class="one" href="{{ url('contact/') }}">Contact Us</a>
-                    <a class="three" href="{{url('login')}}"><img src="{{ asset('images/mexico-icon3.png') }}"
-                                                                  alt="icon3">Sign in or Register </a>
+                    <a class="three" href="{{url('logout')}}"><img src="{{ asset('images/mexico-icon3.png') }}"
+                                                                   alt="icon3">Sign Out </a>
                 </div>
             </div>
         </div>
